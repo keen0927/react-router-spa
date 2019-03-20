@@ -5,7 +5,8 @@ import {
     Home,
     About,
     AboutView,
-    Another
+    Another,
+    InnerRoutes
 } from 'pages';
 
 class App extends PureComponent {
@@ -26,6 +27,8 @@ class App extends PureComponent {
           {/*<Route path={`/aboutView/:name/:anotherValue`} component={AboutView} />*/}
 
           <Route path={`/Another`} component={Another} />
+
+          <Route path={`/InnerRoutes`} component={InnerRoutes} />
       </div>
     );
   }

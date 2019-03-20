@@ -13,6 +13,7 @@
 
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { Test } from 'pages';
 
 class About extends Component {
 
@@ -31,6 +32,7 @@ class About extends Component {
                 <button onClick={() => {
                     history.push('/Another')
                 }}>온클릭 함수에서</button>
+                <Test />
             </div>
         );
     }
