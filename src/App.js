@@ -1,25 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { PureComponent } from 'react';
+import { Route } from 'react-router-dom';
 
-class App extends Component {
+import {
+    Home,
+    About,
+    AboutView,
+    Another
+} from 'pages';
+
+class App extends PureComponent {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Route exact path={`/`} component={Home} />
+
+        {/*타입 1 : 첫 라우트에 exact 추가 하는법과 아래의 타입2가 있다.*/}
+        {/*<Route exact path={`/about`} component={About} />*/}
+        {/*<Route path={`/about/:name`} component={About} />*/}
+
+        {/*타입 2 : :name값을 선택적으로 받을 수 있게 params뒤에 ? 를 입력 */}
+        {/*<Route path={`/about/:name?`} component={About} />*/}
+
+          <Route exact path={`/about`} component={About} />
+          <Route path={`/aboutView/:name?`} component={AboutView} />
+          {/*<Route path={`/aboutView/:name/:anotherValue`} component={AboutView} />*/}
+
+          <Route path={`/Another`} component={Another} />
       </div>
     );
   }
